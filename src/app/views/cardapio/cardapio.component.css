@@ -1,0 +1,50 @@
+.menu-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ED0000;
+}
+
+.menu-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu-detalhes {
+  margin: 20px;
+  text-align: left;
+}
+
+.menu-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #521d16;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7b2922;
+}
+
+.buy-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+::ng-deep app-button button {
+  width: 404px;
+  height: 74px;
+  font-size: 20px;
+}
+

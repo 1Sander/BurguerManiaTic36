@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --primary-color: #ED0000;
+    --secondary-color: #521D16;
+    --background-color: #FFFFFF;
+}
+
+/* Reset e configurações globais */
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+/* Estilo Global */
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+

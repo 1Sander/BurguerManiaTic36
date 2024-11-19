@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  font-family: var(--font-family); /* Fonte global */
+}
+
+.primary-button {
+  background-color: var(--primary-color); /* Cor primária */
+  color: var(--background-color); /* Texto branco */
+  border: 1px solid var(--primary-color);
+}
+
+.primary-button:hover {
+  background-color: var(--secondary-color); /* Cor secundária no hover */
+  border-color: var(--secondary-color);
+}
+
+.secondary-button {
+  background-color: var(--background-color); /* Fundo branco */
+  color: var(--secondary-color); /* Texto na cor secundária */
+  border: 1px solid var(--primary-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--primary-color); /* Cor primária no hover */
+  color: var(--background-color); /* Texto branco no hover */
+  border-color: var(--primary-color);
+}

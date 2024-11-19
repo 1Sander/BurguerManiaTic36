@@ -1,0 +1,37 @@
+<app-header></app-header>
+<main class="menu">
+  <!-- Título dinâmico com base no card selecionado -->
+  <h1 class="menu-title">CARDÁPIO</h1>
+
+  <!-- Lista de cards -->
+  <section class="menu-cards" *ngIf="!selectedCard">
+    <app-card
+      *ngFor="let card of cards"
+      [title]="card.title"
+      [description]="card.description"
+      [ingredients]="card.ingredients"
+      image="assets/burguer.png"
+      (click)="selectCard(card)"
+    ></app-card>
+  </section>
+
+  <!-- Detalhes do card selecionado -->
+  <section *ngIf="selectedCard" class="menu-detalhes">
+    <app-detalhes
+      [title]="selectedCard.title"
+      [price]="selectedCard.price"
+      [description]="selectedCard.description"
+      [ingredients]="selectedCard.ingredients"
+    ></app-detalhes>
+    <div class="buy-button">
+    <app-button [isPrimary]="true" (click)="clearSelection()">COMPRAR</app-button>
+  </div>
+  </section>
+
+  <!-- Botão para ver o cardápio completo (aparece quando nenhum card está selecionado) -->
+  <div *ngIf="!selectedCard" class="menu-button">
+    <app-button [isPrimary]="true" routerLink="/cardapio-completo">
+      VER CARDÁPIO COMPLETO
+    </app-button>
+  </div>
+</main>

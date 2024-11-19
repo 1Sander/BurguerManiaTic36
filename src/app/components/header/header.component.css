@@ -1,0 +1,33 @@
+/* Estilização do cabeçalho */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px; /* Aumente o espaçamento interno */
+    max-width: 1097px;  /* Define uma largura máxima */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões no lado direito */
+.app-nav {
+    display: flex;
+    gap: 30px; /* Espaçamento entre os botões */
+}
+
+/* Estilo dos botões */
+.header-button {
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 27.84px;
+    color: #521D16; /* Ajuste a cor conforme necessário */
+    cursor: pointer;
+}
+
+.header-button:hover {
+    text-decoration: underline;
+}
+

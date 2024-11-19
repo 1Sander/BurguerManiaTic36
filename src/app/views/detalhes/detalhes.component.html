@@ -1,0 +1,16 @@
+<div class="detalhes">
+    <div class="detalhes-content">
+      <div class="card">
+        <img ngSrc="./assets/burguer.png" width="317" height="250" />
+        <h1>{{ title }}</h1>
+        <p>{{ ingredients }}</p>
+       <div class="price">
+        <h1>{{ price | currency:'BRL' }}</h1>
+      </div>
+      </div>
+      <div class="descricao">
+        <h2>Descrição</h2>
+        <p>{{ description }}</p>
+      </div>
+    </div>
+  </div>

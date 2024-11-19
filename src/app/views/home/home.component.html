@@ -1,0 +1,13 @@
+<app-header></app-header>
+<main>
+    <section class="main-section">
+        <div class="headline">
+        </div>
+        <img ngSrc="./assets/principal.png" width="836" height="442"/>
+    </section>
+
+    <section class="home-buttons">
+        <app-button [isPrimary]="true" routerLink="/pedido">Fazer pedido</app-button>
+        <app-button [isPrimary]="false" routerLink="/cardapio">Acessar cardápio</app-button>
+      </section>
+</main>
