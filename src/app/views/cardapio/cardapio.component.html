@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <main class="menu">
   <!-- Título dinâmico com base no card selecionado -->
   <h1 class="menu-title">CARDÁPIO</h1>
@@ -6,12 +7,12 @@
   <!-- Lista de cards -->
   <section class="menu-cards" *ngIf="!selectedCard">
     <app-card
-      *ngFor="let card of cards"
-      [title]="card.title"
-      [description]="card.description"
-      [ingredients]="card.ingredients"
-      image="assets/burguer.png"
-      (click)="selectCard(card)"
+      *ngFor="let produto of produtos.slice(0, maxCardsToShow)"
+      [title]="produto.nome"
+      [description]="produto.fullDescription || 'Descrição completa não disponível'"
+      [ingredients]="produto.baseDescription || 'Ingredientes não disponíveis'"
+      [image]="produto.pathImage || 'assets/burguer.png'"
+      (click)="selectCard(produto)"
     ></app-card>
   </section>
 
@@ -20,17 +21,17 @@
     <app-detalhes
       [title]="selectedCard.title"
       [price]="selectedCard.price"
-      [description]="selectedCard.description"
-      [ingredients]="selectedCard.ingredients"
+      [description]="selectedCard.fullDescription"
+      [ingredients]="selectedCard.baseDescription"
     ></app-detalhes>
     <div class="buy-button">
-    <app-button [isPrimary]="true" (click)="clearSelection()">COMPRAR</app-button>
-  </div>
+      <app-button [isPrimary]="true" (click)="clearSelection()">COMPRAR</app-button>
+    </div>
   </section>
 
-  <!-- Botão para ver o cardápio completo (aparece quando nenhum card está selecionado) -->
-  <div *ngIf="!selectedCard" class="menu-button">
-    <app-button [isPrimary]="true" routerLink="/cardapio-completo">
+  <!-- Botão para ver o cardápio completo -->
+  <div *ngIf="!selectedCard && produtos.length > 3" class="menu-button">
+    <app-button [isPrimary]="true" (click)="showAllCards()">
       VER CARDÁPIO COMPLETO
     </app-button>
   </div>

@@ -1,1 +1,10 @@
-<router-outlet />
+<router-outlet></router-outlet>
+
+  <p *ngFor="let cliente of clientes$ | async">
+    {{ cliente.nome }}
+  </p>
+
+  <p *ngFor="let produto of produtos$ | async">
+    {{ produto.nome }}
+  </p>
+  

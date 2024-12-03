@@ -14,4 +14,5 @@ export class DetalhesComponent {
   @Input() price: number = 0;
   @Input() ingredients: string = '';
   @Input() description: string = '';
+  @Input() image: string = '';
 }

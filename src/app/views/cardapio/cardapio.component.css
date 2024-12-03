@@ -6,15 +6,18 @@
 }
 
 .menu-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .menu-detalhes {
   margin: 20px;
   text-align: left;
+  justify-content: center;
 }
 
 .menu-button {
