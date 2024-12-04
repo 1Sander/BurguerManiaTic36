@@ -1,27 +1,40 @@
-# BurgueMania
+# Este projeto é um sistema web completo para gerenciamento de clientes, pedidos e produtos.
+# O sistema permite gerenciar categorias de produtos, criar pedidos e associá-los a clientes, com uma interface intuitiva e moderna.
+# A aplicação inclui um frontend responsivo desenvolvido em Angular e um backend robusto em .NET Core com banco de dados SQLite.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+# Frontend
+Navegação dinâmica: Com botões que redirecionam para as páginas "Início", "Categoria", "Cardápio".
+Sistema de Cardápio:
+Exibição de até 3 cards por vez, com a opção de ver mais.
+Responsividade garantida para dispositivos móveis.
+Integração com o backend para carregar produtos.
 
-## Development server
+Componentes Reutilizáveis:
+app-header: Componente do cabeçalho.
+app-card: Exibição de produtos.
+app-button: Botões reutilizáveis para ações no sistema.
+app-detalhes: Visualização de detalhes dos produtos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# backend
+Estrutura Relacional:
+Clientes, Pedidos e Produtos são integrados por tabelas intermediárias:
+ClientePedido: Relaciona clientes com pedidos.
+PedidoProduto: Relaciona produtos com pedidos.
+Categorias associadas a produtos.
+Status para gerenciar o estado dos pedidos.
 
-## Code scaffolding
+API RESTful:
+Endpoints para CRUD de clientes, pedidos e produtos.
+Banco de Dados SQLite:
+Gerenciamento eficiente com migrações do Entity Framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Como instalar
+1. Clone o repositório: https://github.com/1Sander/ApiCrudTic36.git
+2. Restaure as dependências do .NET Core: dotnet restore
+3. Execute as migrações para configurar o banco de dados: dotnet ef database update
+4. Inicie o Servidor: dotnet run
+5. Clone o repositório: https://github.com/1Sander/BurguerManiaTic36.git
+6. Instale as dependências do Angular: npm install
+7. Inicie o servidor de desenvolvimento: ng serve
+8. Acesse a aplicação em http://localhost:4200.

@@ -1,12 +1,18 @@
+/* Layout Principal */
 .detalhes {
-  display: flex; /* Ativa o Flexbox */
+  display: flex;
   justify-content: center; /* Centraliza horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha para dispositivos menores */
 }
 
 .detalhes-content {
   display: flex;
+  flex-wrap: wrap; /* Flex-wrap para dispositivos menores */
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre elementos */
 }
 
+/* Card */
 .card {
   display: flex;
   flex-direction: column;
@@ -14,20 +20,24 @@
   justify-content: center;
   max-width: 315px;
   text-align: left;
-  margin-right: 300px; /* Aumenta a distância entre .card e .descricao */
-  padding: 10px; /* Diminui o espaçamento interno */
+  margin: 10px; /* Margem ajustada para evitar sobreposição */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Descrição */
 .descricao {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 100%; /* Ajusta para dispositivos menores */
   padding: 20px;
   border: 1px solid;
+  box-sizing: border-box;
 }
 
+/* Título (h2) */
 h2 {
   font-size: 25px;
   text-align: center;
+  margin-bottom: 10px; /* Margem inferior para espaçamento */
 }
 
 /* Título (h1) */
@@ -35,18 +45,43 @@ h1 {
   font-size: 30px;
   font-family: 'Inter', sans-serif;
   text-align: center;
-  margin: 10px 0; /* Ajusta o espaçamento do título */
+  margin: 10px 0;
 }
 
-/* Ingredientes */
-p {
-  font-size: 20px;
-  font-family: 'Inter', sans-serif;
-  margin: 5px 0; /* Ajusta o espaçamento entre parágrafos */
-}
-
+/* Ingredientes e Preço */
+p,
 .price {
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Inter', sans-serif;
-  margin: 5px 0; /* Ajusta o espaçamento entre parágrafos */
+  margin: 5px 0;
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .card {
+    margin-right: 0; /* Remove margem extra para dispositivos médios */
+  }
+  .descricao {
+    max-width: 70%; /* Ajusta a largura para dispositivos médios */
+  }
+}
+
+@media (max-width: 768px) {
+  .detalhes-content {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center;
+  }
+
+  .descricao {
+    max-width: 90%; /* Ajusta a largura para dispositivos pequenos */
+  }
+
+  h2, h1 {
+    font-size: 22px; /* Reduz o tamanho do título em dispositivos menores */
+  }
+
+  p, .price {
+    font-size: 16px; /* Ajusta a fonte para dispositivos pequenos */
+  }
+}
+
